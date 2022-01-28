@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+}
+
+.steps-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  max-width: 350px;
+}
+
+.step {
+  border: 2px solid gray;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: border 1.6s;
+}
+
+.active-step {
+  border: 2px solid rgb(116, 169, 253);
+}
+
+.connect-line {
+  width: 80px;
+  height: 3px;
+  display: flex;
+  align-self: center;
+  background-color: gray;
+}
+
+.connect-line-active {
+  background-color: rgb(116, 169, 253);
+  animation: changeProgressColorBar 1.5s;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes changeProgressColorBar {
+  0% {
+    background-color: gray;
+  }
+
+  100% {
+    background-color: rgb(116, 169, 253);
+  }
+}
