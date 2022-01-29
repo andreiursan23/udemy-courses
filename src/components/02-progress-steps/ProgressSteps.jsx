@@ -6,64 +6,64 @@ function ProgressSteps() {
 
   const nextStep = () => {
     setStepCount(stepCount + 1);
-
-    console.log(stepCount);
   };
 
   const prevStep = () => {
     setStepCount(stepCount - 1);
+  };
 
-    console.log(stepCount);
+  const lineWidth = () => {
+    switch (stepCount) {
+      case 2:
+        return "33%";
+      case 3:
+        return "66%";
+      case 4:
+        return "100%";
+    }
   };
 
   return (
-    <>
+    <div>
       <section className="container">
         <ul className="steps-container">
+          <span className="connect-line" style={{ width: lineWidth() }}></span>
+
           <li className="step active-step">
             <span>1</span>
           </li>
-          <span
-            className={
-              stepCount >= 2
-                ? `connect-line connect-line-active`
-                : `connect-line`
-            }
-          ></span>
+
           <li className={stepCount >= 2 ? `step active-step` : `step`}>
             <span>2</span>
           </li>
-          <span
-            className={
-              stepCount >= 3
-                ? `connect-line connect-line-active`
-                : `connect-line`
-            }
-          ></span>
+
           <li className={stepCount >= 3 ? `step active-step` : `step`}>
             <span>3</span>
           </li>
-          <span
-            className={
-              stepCount >= 4
-                ? `connect-line connect-line-active`
-                : `connect-line`
-            }
-          ></span>
+
           <li className={stepCount >= 4 ? `step active-step` : `step`}>
             <span>4</span>
           </li>
         </ul>
+
         <div className="controls">
-          <button onClick={prevStep} disabled={stepCount <= 1 ? true : false}>
+          <button
+            onClick={prevStep}
+            className="btn"
+            disabled={stepCount <= 1 ? true : false}
+          >
             Prev
           </button>
-          <button onClick={nextStep} disabled={stepCount >= 4 ? true : false}>
+          <button
+            onClick={nextStep}
+            className="btn"
+            disabled={stepCount >= 4 ? true : false}
+          >
             Next
           </button>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 

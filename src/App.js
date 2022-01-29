@@ -1,8 +1,8 @@
-import ProgressSteps from "./components/02-progress-steps/ProgressSteps"
+import ProgressSteps from "./components/02-progress-steps/ProgressSteps";
 
 function App() {
   return (
-    <div className="App">
+    <div className="main-container">
       <ProgressSteps />
     </div>
   );
