@@ -1,0 +1,94 @@
+/* HAMBURGER MENU STYLES AND ANIMATIONS */
+.ham-menu {
+  background-color: coral;
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  border-radius: 50%;
+  height: 220px;
+  width: 220px;
+  z-index: 100;
+  transition: transform 0.6s ease-in-out;
+}
+
+.ham-menu.open {
+  transform: rotate(180deg);
+}
+
+.menu-opened {
+  transform: rotate(-15deg);
+}
+
+.ham-menu button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 30px;
+}
+
+.open-menu-btn {
+  position: relative;
+  top: 25px;
+  left: 25px;
+}
+
+.close-menu-btn {
+  position: relative;
+  top: 115px;
+  left: 25px;
+}
+
+/* MENU LINKS HIDDEN BEHIND MAIN CONTENT */
+.hidden-layer {
+  background-color: dimgray;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.hidden-layer ul {
+  position: fixed;
+  bottom: 150px;
+}
+
+.hidden-layer li {
+  color: #fefefe;
+  padding: 20px;
+}
+
+.hidden-layer a {
+  color: #fefefe;
+  padding: 25px 10px;
+  text-decoration: none;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.hidden-layer span {
+  position: relative;
+  bottom: 5px;
+  padding: 0 0 0 7px;
+}
+
+/* MAIN CONTENT SECTION OF THE PAGE */
+section {
+  padding: 120px 0 0 0;
+  margin: 0 auto;
+  width: 900px;
+}
+
+.main-container {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+main {
+  position: relative;
+  background: #fefefe;
+  transform-origin: top left;
+  transition: transform 0.6s ease-in-out;
+  height: 100%;
+  width: 100%;
+  z-index: 50;
+}
