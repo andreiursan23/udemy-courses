@@ -13,7 +13,11 @@ function RotatingNav() {
   };
 
   return (
-    <div className="main-container">
+    <div
+      className={
+        !isMenuOpened ? "main-container" : "main-container menu-visible"
+      }
+    >
       <header>
         <div className={isMenuOpened ? "ham-menu" : "ham-menu open"}>
           <button href="#" onClick={openMenu} className="open-menu-btn">
@@ -32,19 +36,19 @@ function RotatingNav() {
         <nav>
           <div className="hidden-layer">
             <ul>
-              <li>
+              <li className={isMenuOpened && "visible"}>
                 <a href="#">
                   <img src="./home-icon.png" alt="home icon" height={"25px"} />
                   <span>Home</span>
                 </a>
               </li>
-              <li>
+              <li className={isMenuOpened && "visible"}>
                 <a href="#">
                   <img src="./user.png" alt="about icon" height={"25px"} />
                   <span>About</span>
                 </a>
               </li>
-              <li>
+              <li className={isMenuOpened && "visible"}>
                 <a href="#">
                   <img src="./email.png" alt="contact icon" height={"25px"} />
                   <span>Contact</span>
@@ -90,11 +94,12 @@ function RotatingNav() {
               I am bekom fat doggo smol.
             </p>
 
-            <figure>
+            <figure className="dog-img">
               <figcaption>My Dog</figcaption>
               <img
                 src="./dog-orange.jpg"
-                alt="puppy in pineapple suit on orange background"
+                alt="light brown and white puppy on orange background"
+                width={"900px"}
               />
             </figure>
 
