@@ -108,13 +108,13 @@ section {
   width: 900px;
 }
 
-.main-container {
+.rotating-nav-container {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
 }
 
-.main-container.menu-visible {
+.rotating-nav-container.menu-visible {
   overflow: hidden;
 }
 

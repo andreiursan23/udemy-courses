@@ -24,7 +24,7 @@ function ProgressSteps() {
   };
 
   return (
-    <div>
+    <div className="progress-steps-container">
       <section className="container">
         <ul className="steps-container">
           <span className="connect-line" style={{ width: lineWidth() }}></span>

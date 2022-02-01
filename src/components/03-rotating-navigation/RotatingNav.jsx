@@ -15,7 +15,9 @@ function RotatingNav() {
   return (
     <div
       className={
-        !isMenuOpened ? "main-container" : "main-container menu-visible"
+        !isMenuOpened
+          ? "rotating-nav-container"
+          : "rotating-nav-container menu-visible"
       }
     >
       <header>
