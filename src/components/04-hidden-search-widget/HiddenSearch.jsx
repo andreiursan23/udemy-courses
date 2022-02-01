@@ -1,14 +1,19 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./HiddenSearch.css";
 
 function HiddenSearch() {
   const [isOpened, setIsOpened] = useState(false);
+  const inputElement = useRef(null);
+
+  useEffect(() => {
+    if (isOpened) {
+      inputElement.current.focus();
+    }
+  }, [isOpened]);
 
   const handleClick = () => {
     isOpened ? setIsOpened(false) : setIsOpened(true);
   };
-
-  console.log(isOpened);
 
   return (
     <div className="hidden-search-container">
@@ -18,13 +23,16 @@ function HiddenSearch() {
           className="search-input"
           placeholder="Search..."
           className={isOpened ? "active" : ""}
+          ref={inputElement}
         />
-        <img
-          src="./search.png"
-          alt="search icon"
-          height={"40px"}
-          onClick={handleClick}
-        />
+        <button>
+          <img
+            src="./search.png"
+            alt="search icon"
+            height={"50px"}
+            onClick={handleClick}
+          />
+        </button>
       </div>
     </div>
   );
